@@ -64,9 +64,9 @@ def search():
 def welcome():
 	wel = """
         +=========================================+
-        |..........   fb-brute   ...........|
+        |..........   Facebook Crack   ...........|
         +-----------------------------------------+
-        |            #Author: Mr.Dipesh_karki              | 
+        |            #Author: Technical Dipesh              | 
         |	       Version 1.0                |
  	|   https://www.youtube.com/channel/UC6o9Zfm6cMXG1wJrHl_9FlA      |
         +=========================================+
