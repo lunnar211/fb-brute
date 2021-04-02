@@ -68,7 +68,7 @@ def welcome():
         +-----------------------------------------+
         |            #Author: Technical Dipesh              | 
         |	       Version 1.0                |
- 	|   https://www.youtube.com/channel/UC6o9Zfm6cMXG1wJrHl_9FlA      |
+ 	|   https://www.youtube.com/channel/UCXuKDM3J_GkCxmdki8Hxh4w      |
         +=========================================+
         |..........  fb-brute  ...........|
         +-----------------------------------------+\n\n
