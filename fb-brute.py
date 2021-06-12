@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+# This Cooding is Coode in python 2 now it willbe renew soon
 
 import sys
 import mechanize
 import cookielib
 import random
-
+#pip2 install mechanize
+#pip2 install requests
 
 
 
@@ -60,14 +62,14 @@ def search():
 		brute(password)
 
 		
-#welcome 
+#welcome Hackers
 def welcome():
 	wel = """
         +=========================================+
-        |..........   Facebook Crack   ...........|
+        |..........   Facebook Crack Brute   ...........|
         +-----------------------------------------+
-        |            #Author: Technical Dipesh              | 
-        |	       Version 1.0                |
+        |            #Author: Technical Dipesh          | 
+        |	       Version 1.0                      |
  	|   https://www.youtube.com/channel/UCXuKDM3J_GkCxmdki8Hxh4w      |
         +=========================================+
         |..........  fb-brute  ...........|
