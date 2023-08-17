@@ -68,16 +68,15 @@ def welcome():
         +=========================================+
         |..........   Facebook Crack Brute   ...........|
         +-----------------------------------------+
-        |            #Author: Technical Dipesh          | 
+        |            #Author :- MISTER-X         | 
         |	       Version 1.0                      |
- 	|   https://www.youtube.com/channel/UCXuKDM3J_GkCxmdki8Hxh4w      |
+ 	|   https://chat.whatsapp.com/LSiBmcAvFkhKlUKcrWgxbl      |
         +=========================================+
         |..........  fb-brute  ...........|
         +-----------------------------------------+\n\n
 """
 	total = open(passwordlist,"r")
 	total = total.readlines()
-	print wel 
 	print " [*] Account to crack : {}".format(email)
 	print " [*] Loaded :" , len(total), "passwords"
 	print " [*] Cracking, please wait ...\n\n"
