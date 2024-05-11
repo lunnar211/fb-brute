@@ -10,5 +10,5 @@ In brute force attack method,tool try all combination of password to provide acc
 Download&Install
 git clone https://github.com/lunnar211/fb-brute
 cd facebook-cracker
-chmod +x fb-brute
+chmod +x fb-brutehttps://www.facebook.com/profile.php?id=100005989952465&mibextid=ZbWKwL
 python fb-brute.py
