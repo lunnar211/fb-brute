@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env pthon
 # -*- coding: UTF-8 -*-
 # This Cooding is Coode in python 2 now it willbe renew soon
 
 import sys
 import mechanize
-import cookielib
+import http.cookiejar as cookielib
 import random
 #pip2 install mechanize
 #pip2 install requests
@@ -77,10 +77,10 @@ def welcome():
 """
 	total = open(passwordlist,"r")
 	total = total.readlines()
-	print wel 
-	print " [*] Account to crack : {}".format(email)
-	print " [*] Loaded :" , len(total), "passwords"
-	print " [*] Cracking, please wait ...\n\n"
+	print(wel)
+	print(" [*] Account to crack : {}".format(email))
+	print(" [*] Loaded : {} passwords".format(len(total)))
+	print(" [*] Cracking, please wait ...\n\n")
 
 	
 if __name__ == '__main__':

